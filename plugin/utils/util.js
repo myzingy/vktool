@@ -75,6 +75,17 @@ function strtotime(datestr)
 
 
 module.exports = {
+    _config:{
+        requst:{
+            ret:'ret',
+            code:200,
+        }
+    },
+    config(conf){
+        Object.keys(conf).forEach(key=>{
+            this._config[key]={...conf[key],...this._config[key]}
+        })
+    },
     date_format: date_format,
     strtotime:strtotime,
     time(hhiiss=''){
@@ -184,6 +195,35 @@ module.exports = {
                 fail({errMsg:wxapi+' is undefined'})
             }
         })
+    },
+
+    /**
+     * 网络请求封装
+     * @param param
+     * @param fouce
+     * @returns {*}
+     */
+    async requst(param,fouce=false){
+        let requst_url=this.http_build_query(param.data||{},param.url);
+        let cache_key=requst_url.replace(/http.*\//,'');
+        console.log('requst.url',requst_url,cache_key)
+        if(fouce=='clear' || fouce=='clean'){
+            return this.promise('wx.removeStorage',{key:cache_key})
+        }
+        let cache_data=false;
+        if(!fouce){//从缓存中获取
+            try {
+                cache_data= await this.promise('wx.getStorage',{key:cache_key})
+                if(cache_data) {
+                    cache_data.isCache=true;
+                    return cache_data;
+                }
+            }catch (e){}
+
+        }
+        let res=await this.promise('wx.request',param);
+
+
     }
 }
 

@@ -1,9 +1,17 @@
 //app.js
 var {vk,regeneratorRuntime} = requirePlugin("myPlugin")
 App({
+  ...vk,
+  regeneratorRuntime:regeneratorRuntime,
   onLaunch: function () {
+      this.config({
+          requst:{
+            ret:'code',
+              code:0,
+          }
+      })
   },
   onHide(){
-      vk.cache_clear()
+      this.cache_clear()
   }
 })
