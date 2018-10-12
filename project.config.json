@@ -1,0 +1,12 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"pluginRoot": "plugin/",
+	"compileType": "plugin",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wx3fd77437e8ec5d44",
+	"projectname": "vktool",
+	"libVersion": "2.3.0",
+	"condition": {}
+}
