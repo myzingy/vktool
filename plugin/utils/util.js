@@ -77,8 +77,23 @@ function strtotime(datestr)
 module.exports = {
     _config:{
         requst:{
-            ret:'ret',
-            code:200,
+            method:'POST',
+            dataType:'json',
+            header:{
+
+            },
+            statusKey:'Response',//Response 则使用网络请求状态判断，其它值则使用res.StatusKey 进行判断
+            statusCode:200, //正常返回结果 StatusKey的值 == StatusCode 视为正常结果
+
+            msgKey:'msg',   //错误信息的key
+            infoCode:201,   //一般性 toast 提示信息，如字段必填等
+            errorCode:-1,  //严重错误，如登录超时
+            infoFun:(res)=>{
+                this.toast(res[this._config.requst.msgKey])
+            },
+            errorFun:(res=>{
+                this.toast(res[this._config.requst.msgKey])
+            }),
         }
     },
     config(conf){
@@ -97,6 +112,7 @@ module.exports = {
     toast:function(title,icon='none'){
         wx.showToast({
             title:title,
+            mask:true,
             icon:icon
         })
     },
@@ -157,7 +173,10 @@ module.exports = {
         return e.detail.value;
     },
 
-    attr:function(e,key){
+    attr:function(e,key=""){
+        if(!key){
+            return e.currentTarget.dataset;
+        }
         return e.currentTarget.dataset[key];
     },
 
@@ -222,6 +241,9 @@ module.exports = {
 
         }
         let res=await this.promise('wx.request',param);
+        if(this._config[`request.statusKey`]=='Response'){
+
+        }
 
 
     }
