@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "list": "plugin://myPlugin/list"
+    "line": "plugin://myPlugin/line"
   }
 }
