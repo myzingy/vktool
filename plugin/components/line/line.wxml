@@ -1,0 +1,4 @@
+<!--plugin/components/line/line.wxml-->
+<view class="line">
+    <view class="text"><slot></slot></view>
+</view>
