@@ -26,9 +26,16 @@ Page({
         val:getApp().date_format(1234567890,format)
       });
     })
-    let loc=await getApp().promise('wx.getLocation',{
-      type:'gcj02',
-    })
+    let loc
+    try {
+      loc=await getApp().promise('wx.getLocation',{
+        type:'gcj02',
+      })
+    }catch (e){
+      console.log(e);
+      loc={用户为授权或获取位置失败:e.errMsg};
+    }
+
     this.setData({
       dates:dates,
       location:JSON.stringify(loc)
@@ -45,15 +52,23 @@ Page({
         await getApp().cache('cache.over','这是缓存串，也可以是object');
         break;
       case 'cread':
-        let info=await getApp().cache('cache.over');
-        getApp().toast(info);
+        try {
+          let info=await getApp().cache('cache.over');
+          getApp().toast(info);
+        }catch (e){
+          getApp().toast('没有任何缓存');
+        }
         break;
       case 'cwrite5':
-        await getApp().cache('cache.5s',{info:'只会缓存5秒哦'},5);
+        await getApp().cache('cache.5s',{info:'我只会缓存5秒'},5);
         break;
       case 'cread5':
-        let data=await getApp().cache('cache.5s');
-        getApp().toast(data.info);
+        try {
+          let data = await getApp().cache('cache.5s');
+          getApp().toast(data.info||'5秒缓存已过期');
+        }catch (e){
+          getApp().toast('没有任何缓存');
+        }
         break;
     }
     this.setData({
