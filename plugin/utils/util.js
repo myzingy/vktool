@@ -141,7 +141,7 @@ module.exports = {
                 key:key,
             })
             if(cache.data){
-                if(cache.data.timeout==-1 || cache.data.timeout<this.time()){
+                if(cache.data.timeout==-1 || cache.data.timeout>this.time()){
                     return cache.data.data;
                 }
             }

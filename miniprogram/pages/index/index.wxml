@@ -2,7 +2,36 @@
     <view class="title">
         本插件旨在提高开发效率，提供一些 JS方法 和 DOM组件，具体查看开发文档；
     </view>
-    <view>
+    <view class="item">
         <line>cache</line>
+        <view class="flex-lr">
+            <button loading="{{loading.cwrite}}" data-type="cwrite" bindtap="tapEvent">写入存储</button>
+            ->
+            <button loading="{{loading.cread}}" data-type="cread" bindtap="tapEvent">读取存储</button>
+        </view>
+        <view class="flex-lr">
+            <button loading="{{loading.cwrite5}}" data-type="cwrite5" bindtap="tapEvent">5秒后失效</button>
+            ->
+            <button loading="{{loading.cread5}}" data-type="cread5" bindtap="tapEvent">读取5秒存储</button>
+        </view>
+    </view>
+    <view class="item">
+        <line>时间戳格式化</line>
+        <view>时间戳：1234567890</view>
+        <view>
+            <view wx:for="{{dates}}" wx:key="dates.key">{{item.format}}=>{{item.val}}</view>
+        </view>
+    </view>
+    <view class="item">
+        <line>小程序接口 promise 化</line>
+        <view>封装 promise 函数，依然使用小程序接口参数进行传递</view>
+        <view style="border: 1px solid #ccc;word-wrap:break-word;">
+            let loc=await getApp().promise('wx.getLocation',{
+                type:'gcj02',
+            })
+        </view>
+        <view style="border: 1px solid #ccc;word-wrap:break-word;margin-top: 10px;">
+            {{location}}
+        </view>
     </view>
 </view>
