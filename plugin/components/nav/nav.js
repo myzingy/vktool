@@ -35,7 +35,8 @@ Component({
    */
   methods: {
     back(){
-      wx.navigateBack()
+      //wx.navigateBack()
+      this.triggerEvent('back');
     },
       home(){
         if(!this.data.disHome) return;
@@ -49,10 +50,9 @@ Component({
 
         if (pages.length > 1) {
             disBack = true;
-        } else {
-            if (this.data.hasHome) {
-                disHome = true;
-            }
+        }
+        if (this.data.hasHome) {
+          disHome = true;
         }
         let statusBarHeight=40;
         try{

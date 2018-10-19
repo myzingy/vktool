@@ -1,14 +1,14 @@
 <!--components/nav/nav.wxml-->
 <view class="nav-main-space" style="height: {{statusBarHeightFull}}rpx;background-color: {{backgroundColor}};color:{{color}};">
-    <view class="nav-main" style="">
+    <view class="nav-main" style="background-color: {{backgroundColor}};">
         <view class="nav" style="margin-top: {{statusBarHeight}}rpx;">
             <view class="flex-lr part">
                 <view class="opt flex-ll">
-                    <view class="back flex-vc" bindtap="back" wx:if="{{disBack}}">
-                        <view class="iconfont icon-back"></view>
-                    </view>
                     <view class="home flex-vc" bindtap="home" wx:if="{{disHome}}">
                         <view class="iconfont icon-home"></view>
+                    </view>
+                    <view class="back flex-vc" bindtap="back" wx:if="{{disBack}}">
+                        <view class="iconfont icon-back"></view>
                     </view>
                 </view>
                 <view class="title" bindtap="home">

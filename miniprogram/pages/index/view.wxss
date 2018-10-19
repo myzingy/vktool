@@ -1,0 +1,6 @@
+/* miniprogram/pages/index/view.wxss */
+.page{
+  font-size: 30rpx;
+  width: 90%;
+  margin: 0 5%;
+}

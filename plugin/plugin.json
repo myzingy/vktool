@@ -1,7 +1,8 @@
 {
   "publicComponents": {
     "line": "components/line/line",
-    "nav": "components/nav/nav"
+    "nav": "components/nav/nav",
+    "formids": "components/formids/formids"
   },
   "main": "index.js"
 }

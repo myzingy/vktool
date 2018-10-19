@@ -5,4 +5,14 @@
   margin: 0 5%;
 }
 .item{
+  margin-bottom: 10px;
+}
+.item line{
+  margin-bottom: 10px;
+  display: block;
+}
+.link{
+  color: blue;
+  text-decoration: underline;
+  margin-bottom: 20rpx;
 }

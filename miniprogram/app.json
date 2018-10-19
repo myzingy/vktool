@@ -1,15 +1,16 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
-  "plugins": {
-    "myPlugin": {
-      "version": "dev",
-      "provider": "wxd3dc4206c76f14fc"
+    "pages": [
+        "pages/index/index",
+        "pages/index/view"
+    ],
+    "plugins": {
+        "myPlugin": {
+            "version": "dev",
+            "provider": "wxd3dc4206c76f14fc"
+        }
+    },
+    "window": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black"
     }
-  },
-  "window": {
-    "navigationStyle": "custom",
-    "navigationBarTextStyle": "black"
-  }
 }

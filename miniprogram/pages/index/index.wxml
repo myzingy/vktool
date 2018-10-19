@@ -35,4 +35,18 @@
             {{location}}
         </view>
     </view>
+    <view class="item">
+        <line>formids</line>
+        <view>为了收集 formid，此组件在点击时会保存 formid 到本地缓存，key为formids</view>
+        <formids bindclick="navigateGo">
+            <view class="link">绑定事件方式跳到 view 页面</view>
+        </formids>
+        <formids url="./view" openType="navigate">
+            <view class="link">navigate view 页面</view><view>(组件wx.navigateTo有bug，跳不动)</view>
+        </formids>
+        <formids url="./view" openType="redirect">
+            <view class="link">redirect view 页面</view><view>(组件wx.redirectTo有bug，跳不动)</view>
+        </formids>
+
+    </view>
 </view>

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "line": "plugin://myPlugin/line",
-    "nav": "plugin://myPlugin/nav"
+    "nav": "plugin://myPlugin/nav",
+    "formids": "plugin://myPlugin/formids"
   }
 }

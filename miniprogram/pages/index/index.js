@@ -84,5 +84,10 @@ Page({
       url:'/pages/index/index'
     })
   },
-
+  navigateGo(e){
+    console.log(e)
+    wx.navigateTo({
+      url:'./view'
+    });
+  }
 })

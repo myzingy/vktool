@@ -1,0 +1,12 @@
+<!--miniprogram/pages/index/view.wxml-->
+<nav bindback="goBack" bindhome="goHome" hasHome backgroundColor="#ff0" color="#f00">VKTOOL NAV</nav>
+<view class="page">
+    由于微信组件的导航事件，
+    wx.redirectTo、
+    wx.navigateTo、
+    wx.navigateBack
+    都有bug，跳不动，所以这里 nav 点击 back 时，triggerEvent 了 back 事件，请自行处理下返回
+    <view>
+        点击 home 时，triggerEvent 了 home 事件，在页面上自行处理下 wx.reLaunch 到首页
+    </view>
+</view>
