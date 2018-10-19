@@ -187,12 +187,45 @@ getApp().requst({
     
 
 ## 组件库
+在 Page json中引入组件,用那个就引用那个
+````
+"usingComponents": {
+    "line": "plugin://myPlugin/line",
+    "nav": "plugin://myPlugin/nav",
+    "formids": "plugin://myPlugin/formids"
+}
+````
+### line
+分割线
+````
+<line>分割线</line>
+````
+![链接](./line.jpeg)
 ### nav
+````
+<nav bindback="goBack" hasHome 
+    bindhome="goHome" 
+    backgroundColor="#ff0" 
+    color="#f00">VKTOOL NAV</nav>
+````
+![链接](./nav.jpeg)
 ### formids
+#####为了收集 formid，此组件在点击时会保存 formid 到本地缓存，key为formids
 
-![链接](./example.jpeg)
-
-
-
-
-
+`由于微信组件的导航事件，
+    wx.redirectTo、
+    wx.navigateTo、
+    wx.navigateBack
+    都有bug，跳不动，只能按第一种事件写法`
+    
+````
+<formids bindclick="navigateGo">
+    <view class="link">绑定事件方式跳到 view 页面</view>
+</formids>
+<formids url="./view" openType="navigate">
+    <view class="link">navigate view 页面</view><view>(组件wx.navigateTo有bug，跳不动)</view>
+</formids>
+<formids url="./view" openType="redirect">
+    <view class="link">redirect view 页面</view><view>(组件wx.redirectTo有bug，跳不动)</view>
+</formids>
+````
