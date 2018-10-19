@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "line": "plugin://myPlugin/line"
+    "line": "plugin://myPlugin/line",
+    "nav": "plugin://myPlugin/nav"
   }
 }

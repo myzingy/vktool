@@ -38,8 +38,11 @@ Page({
 
     this.setData({
       dates:dates,
-      location:JSON.stringify(loc)
+      location:JSON.stringify(loc),
     })
+  },
+  onShow(){
+
   },
   async tapEvent(e){
     let type=getApp().attr(e,'type');
@@ -74,6 +77,12 @@ Page({
     this.setData({
       [`loading.`+type]:false,
     })
-  }
+  },
+  goHome(e){
+    console.log(e)
+    wx.reLaunch({
+      url:'/pages/index/index'
+    })
+  },
 
 })

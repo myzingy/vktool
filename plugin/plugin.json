@@ -1,6 +1,7 @@
 {
   "publicComponents": {
-    "line": "components/line/line"
+    "line": "components/line/line",
+    "nav": "components/nav/nav"
   },
   "main": "index.js"
 }

@@ -1,3 +1,4 @@
+<nav bindhome="goHome" hasHome backgroundColor="#f00" color="#fff">自定义顶部 NAV</nav>
 <view class="page">
     <view class="title">
         本插件旨在提高开发效率，提供一些 JS方法 和 DOM组件，具体查看开发文档；

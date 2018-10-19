@@ -1,0 +1,36 @@
+/* components/nav/nav.wxss */
+@import "../main.wxss";
+.nav-main{
+  position:fixed;
+  width: 100%;
+  z-index: 9999;
+}
+.nav{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.nav .part{
+  line-height: 68rpx;
+  height: 68rpx;
+  text-align: center;
+
+}
+.nav .part .title{
+  width: 100%;
+}
+.nav .part .opt{
+  min-width: 188rpx;
+}
+.nav .part .opt view{
+  width: 68rpx;
+  height: 68rpx;
+  margin-left: 26rpx;
+}
+.nav .part .opt .back-image{
+  height: 32rpx;
+  width: 18rpx;
+}
+.nav .part .opt .home-image{
+  height: 34rpx;
+  width: 36rpx;
+}
