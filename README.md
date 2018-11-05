@@ -1,7 +1,7 @@
 # vktool
 wechat lite app plugin
 
-由于wx很多方式在插件中得不到支持，项目改写为微信组件方式，请移步
+由于wx很多方法在插件中得不到支持，项目改写为微信组件方式，请移步
 https://github.com/myzingy/wx-vktool
 
 	
